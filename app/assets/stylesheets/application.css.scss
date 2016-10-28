@@ -1,0 +1,257 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+$black: #161616;
+$grey: #747474;
+$orange: #ff9900;
+$white: white;
+
+@mixin close-btn {
+		margin-top: 4px;
+		margin-right: 4px;
+		cursor: pointer;
+		background-color: beige;
+		border: none;
+		font-size: 24px;
+		width: 35px;
+		height: 35px;
+		float: right;
+}
+
+@mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	font-family: sans-serif;
+	background: $black;
+	color: $grey;
+	font-size: 12px;
+	height: 100%;
+	padding-right: 10px;
+}
+
+header {
+	display: flex;
+	img {
+		z-index: 1;
+	}
+	div {
+		background: url(/assets/pokedex-header-nav.png);
+		width: 100%;
+		height: 46px;
+		margin-right: -10px;
+	}
+}
+
+.empty-row {
+	width: 100%;
+	height: 20px;
+}
+
+.pokemon-index {
+	.discover-btn {
+		padding: 10px;
+		color: white;
+		background-color: salmon;
+		font-size: 24px;
+		border: solid white 3px;
+		border-radius: 5px;
+		@include center-block;
+	}
+}
+
+.poke-form  {
+	position: fixed;
+	z-index: 10;
+	background-color: beige;
+	width: 40%;
+	left: 30%;
+	right: 30%;
+	top: 40px;
+	border: black 3px solid;
+	border-radius: 5px;
+
+	.form-header {
+		width: 100%;
+		.form-close-btn {
+			@include close-btn;
+		}
+	}
+
+	.form-img {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.text-container {
+		width: 100%;
+		align-items: center;
+		.form-greeting {
+			width: 80%;
+			text-align: center;
+			color: black;
+			@include center-block;
+		}
+	}
+
+	.form-field {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width: 80%;
+	}
+
+	.move-field-row {
+		@include center-block;
+		width: 80%;
+	}
+
+	.move-field {
+		width: 23%;
+		display: inline-block;
+	}
+
+	.form-btn {
+		@include center-block;
+		width: 300px;
+		height: 48px;
+		border: lawngreen 2px solid;
+		border-radius: 5px;
+		background-color: lawngreen;
+		color: white;
+		font-size: 24px;
+		cursor: pointer;
+	}
+
+	.form-btn:active {
+		background-color: green;
+	}
+}
+
+.pokemon-index-list {
+	display: flex;
+	flex-wrap: wrap;
+	text-align: center;
+	align-items: center;
+	.pokemon-index-item {
+		cursor: pointer;
+		img {
+			height: 200px;
+			width: 200px;
+			display: inline-block;
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
+	.pokemon-index-item:hover {
+		background-color: $orange;
+	}
+}
+
+.pokemon-detail {
+	z-index: 10;
+	background-color: beige;
+	color: black;
+	position: fixed;
+	top: 40px;
+	left: 25%;
+	right: 25%;
+	align-items: center;
+	border-radius: 15px;
+	border: black solid 2px;
+
+	.detail-header {
+		width: 100%;
+		.header-btn {
+			@include close-btn;
+		}
+	}
+
+	.detail-table {
+		@include center-block;
+		align-items: center;
+
+		.detail-name {
+			font-size: 36px;
+			text-align: center;
+		}
+
+		.info-row {
+			display: inline-block;
+			width: 100%;
+			border-top: 5px $orange solid;
+			text-align: center;
+			span {
+				font-size: 22px;
+				display: inline-block;
+				width: 24%;
+			}
+
+		}
+		.move-row{
+			display: inline-block;
+			width: 100%;
+			border-top: 5px $orange solid;
+			border-bottom: 5px $orange solid;
+			text-align: center;
+			span {
+				font-size: 22px;
+				display: inline-block;
+				width: 24%;
+			}
+		}
+
+		.item-row {
+			width: 100%;
+			.list-item {
+				cursor: pointer;
+				display: inline-block;
+				width: 33%;
+				.item-name {
+					font-size: 16px;
+					text-align: center;
+				}
+			}
+		}
+
+		img {
+			display: block;
+			margin: auto;
+		}
+	}
+
+	.item-detail {
+		@include center-block;
+		align-items: center;
+		margin-left: -40px;
+		li {
+			font-size: 18px;
+			display: inline-block;
+			width: 33%;
+			margin-left: auto;
+			margin-right: auto;
+			text-align: center;
+		}
+	}
+
+}

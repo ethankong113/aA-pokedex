@@ -1,0 +1,20 @@
+// Place all the styles related to the Api::Pokemon controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$white: #FFFFFF;
+$title: 24px;
+
+.poke-name {
+  color: $white;
+  font-size: $title;
+}
+
+.pokemon-index-list {
+  list-style-type: none;
+}
+
+.pokemon-index-item {
+  width: 33%;
+  border: 2px $white solid;
+}
